@@ -1,15 +1,17 @@
-package gettestie.src.main.java.rocks.zipcode;
+package rocks.zipcode;
+import gettestie.src.main.java.rocks.zipcode.HomeAddress;
 
 
-public class Person {
+public class Person implements Comparable<Person>{
+
     private String name;
     private int yearOfBirth;
-    private Address address;
+    private HomeAddress address;
 
     /**
      * Create a person with given name and age.
      */
-    Person(String name, int yearOfBirth) {
+    public Person(String name, int yearOfBirth) {
         this.name = name;
         this.yearOfBirth = yearOfBirth;
     }
@@ -46,13 +48,13 @@ public class Person {
      * Set a new address for this person.
      */
     public void setAddress(String street, String town, String postCode) {
-        address = new Address(street, town, postCode);
+        address = new HomeAddress(street, town, postCode);
     }
 
     /**
      * Return the address of this person.
      */
-    public Address getAddress() {
+    public HomeAddress getAddress() {
         return address;
     }
 
@@ -62,5 +64,11 @@ public class Person {
     public String toString() // redefined from "Object"
     {
         return "Name: " + name + "\n" + "Year of birth: " + yearOfBirth + "\n";
+    }
+
+    @Override
+    public int compareTo(Person p) {
+        int compareByAge = this.yearOfBirth - p.yearOfBirth;
+        return compareByAge;
     }
 }

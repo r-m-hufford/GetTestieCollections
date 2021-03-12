@@ -1,6 +1,6 @@
 package gettestie.src.main.java.rocks.zipcode;
 
-public class Address {
+public class HomeAddress {
     private String street;
     private String town;
     private String postCode;
@@ -9,14 +9,14 @@ public class Address {
     /**
      * Construct an Address without country
      */
-    public Address(String street, String town, String postCode) {
+    public HomeAddress(String street, String town, String postCode) {
         this(street, town, postCode, "");
     }
 
     /**
      * Construct an Address with full details
      */
-    public Address(String street, String town, String postCode, String country) {
+    public HomeAddress(String street, String town, String postCode, String country) {
         this.street = street;
         this.town = town;
         this.postCode = postCode;
